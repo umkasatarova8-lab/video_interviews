@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview — видеособеседование</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-icon">◉</div><div><strong>Interview</strong><small>Видеособеседование</small></div></div>
+      <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Не подключено</span></div>
+    </header>
+    <section class="intro">
+      <div><p class="eyebrow">VIDEO INTERVIEW · 1 ON 1</p><h1>Пространство для<br><span>личной встречи</span></h1>
+      <p class="sub">Подключитесь и начните видеособеседование. Откройте страницу во втором окне, чтобы проверить звонок.</p></div>
+      <div class="pill">🔒 Прямое соединение WebRTC</div>
+    </section>
+    <section class="videos">
+      <article class="video-card local">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <div class="video-placeholder" id="localPlaceholder"><div class="avatar">Я</div><span>Ваше видео</span></div>
+        <div class="video-label"><span class="label-dot"></span> Вы <small id="localState">Камера выключена</small></div>
+      </article>
+      <article class="video-card remote">
+        <video id="remoteVideo" autoplay playsinline></video>
+        <div class="video-placeholder" id="remotePlaceholder"><div class="avatar other">?</div><span id="peerPlaceholderText">Ожидание собеседника</span></div>
+        <div class="video-label"><span class="label-dot"></span> Собеседник <small id="remoteState">Пока не подключён</small></div>
+      </article>
+    </section>
+    <section class="controls">
+      <button id="cameraBtn" class="control" title="Включить/выключить камеру"><span class="control-icon">▣</span><span>Камера</span></button>
+      <button id="micBtn" class="control" title="Включить/выключить микрофон"><span class="control-icon">♩</span><span>Микрофон</span></button>
+      <button id="connectBtn" class="primary"><span>↗</span> Подключиться</button>
+      <button id="hangupBtn" class="hangup" disabled title="Завершить звонок">✕</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
